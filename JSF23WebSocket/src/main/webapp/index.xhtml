@@ -16,18 +16,16 @@
 <h:body>
 
 	<h:form id="cadastro">
-		<p:commandButton value="click me" process="@this" style="width:auto"
-			onclick="PF('pesquisaInterno').show();" />
+		<h:commandButton value="click me"
+			action="#{testView.inserirNaLista()}">
+			<f:ajax execute="@form" render="@form" />
+		</h:commandButton>
+		<p:commandButton
+			value="click me - 2 (this button causes the null value)"
+			action="#{testView.inserirNaLista()}" />
+
 	</h:form>
 
-
-	<p:dialog widgetVar="pesquisaInterno" id="pesquisaInterno">
-		<h:form>
-			<p:commandButton value="click me"
-				action="#{testView.inserirNaLista()}">
-			</p:commandButton>
-		</h:form>
-	</p:dialog>
 
 </h:body>
 </html>
